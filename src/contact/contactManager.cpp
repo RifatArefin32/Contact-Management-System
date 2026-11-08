@@ -63,6 +63,6 @@ void deleteContact() {
 }
 
 void exitProgram() {
-    std::cout << "Exiting the program. Goodbye!\n";
+    std::cout << "Exiting... Goodbye!\n";
     exit(0);
 }

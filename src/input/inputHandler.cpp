@@ -5,25 +5,29 @@
 #include "../validation/include/inputValidation.h"
 
 void welcomeMessage() {
+    std::cout << "=========================================\n";
     std::cout << "Welcome to the Contact Management System!\n";
+    std::cout << "=========================================\n";
 }
 
 void showMenu() {
-    std::cout << "Menu:\n";
+    std::cout << "\n";
+    std::cout << "********* MENU ************\n";
     std::cout << "1. Add Contact\n";
     std::cout << "2. View Contacts\n";
     std::cout << "3. Search Contact\n";
     std::cout << "4. Edit Contact\n";
     std::cout << "5. Delete Contact\n";
-    std::cout << "6. Exit\n";
+    std::cout << "0. Exit\n";
+    std::cout << "***************************\n";
 }
 
 void selectOption() {
     int option;
-    std::cout << "Option: ";
+    std::cout << "Select Option: ";
     std::cin >> option;
     if (!validateOption(option)) {
-        selectOption();
+        std::cout << "Invalid option. Please try again.\n";
     } else {
         switch (option) {
             case ADD_CONTACT:
