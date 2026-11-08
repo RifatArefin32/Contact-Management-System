@@ -1,10 +1,28 @@
 #include <iostream>
-#include "define.h"
 #include "operationHandler.h"
+#include "inputValidation.h"
 
 void addContact() {
     std::cout << "Adding a new contact...\n";
-    // Implementation for adding a contact
+    
+    std::string name, phone, email, address;
+    std::cout << "Enter name: ";
+    std::cin.get(); // Clear the newline character from the input buffer
+    std::getline(std::cin, name);
+    std::cout << "Enter phone: ";
+    std::getline(std::cin, phone);
+    std::cout << "Enter email: ";
+    std::getline(std::cin, email);
+    std::cout << "Enter address: ";
+    std::getline(std::cin, address);
+
+    if (validateContact(name, phone, email, address)) {
+        // Add contact to the database
+        std::cout << "Contact added successfully!\n";
+    }
+    else {
+        std::cout << "Failed to add contact due to validation errors.\n";
+    }
 }
 
 void viewContacts() {

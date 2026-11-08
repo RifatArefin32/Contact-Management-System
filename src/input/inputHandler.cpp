@@ -2,6 +2,7 @@
 #include "define.h"
 #include "inputHandler.h"   
 #include "operationHandler.h"
+#include "inputValidation.h"
 
 void welcomeMessage() {
     std::cout << "Welcome to the Contact Management System!\n";
@@ -21,8 +22,7 @@ void selectOption() {
     int option;
     std::cout << "Option: ";
     std::cin >> option;
-    if (option < 1 || option > 6) {
-        std::cout << "Invalid option. Please try again.\n";
+    if (!validateOption(option)) {
         selectOption();
     } else {
         switch (option) {
