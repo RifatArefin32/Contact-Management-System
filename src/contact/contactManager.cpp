@@ -29,7 +29,22 @@ void addContact() {
 
 void viewContacts() {
     std::cout << "Viewing all contacts...\n";
-    // Implementation for viewing contacts
+    if (contacts.empty()) {
+        std::cout << "No contacts available.\n";
+        return;
+    }
+    else {
+        int count = 1;
+        for (const auto& contact : contacts) {
+            std::cout << "-------------------------\n";
+            std::cout << "No.: " << count++ << "\n";
+            std::cout << "Name: " << contact.getName() << "\n";
+            std::cout << "Phone: " << contact.getPhone() << "\n";
+            std::cout << "Email: " << contact.getEmail() << "\n";
+            std::cout << "Address: " << contact.getAddress() << "\n";
+            std::cout << "-------------------------\n";
+        }
+    }
 }
 
 void searchContact() {
