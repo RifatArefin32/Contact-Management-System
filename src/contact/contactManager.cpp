@@ -2,6 +2,7 @@
 #include "../contact/include/contactManager.h"
 #include "../validation/include/inputValidation.h"
 
+
 void addContact() {
     std::cout << "Adding a new contact...\n";
     
@@ -17,7 +18,8 @@ void addContact() {
     std::getline(std::cin, address);
 
     if (validateContact(name, phone, email, address)) {
-        // Add contact to the database
+        Contact newContact(name, phone, email, address);
+        contacts.push_back(newContact);
         std::cout << "Contact added successfully!\n";
     }
     else {
