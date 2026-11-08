@@ -1,8 +1,8 @@
 #include <iostream>
 #include "define.h"
 #include "inputHandler.h"   
-#include "operationHandler.h"
-#include "inputValidation.h"
+#include "../contact/include/contactManager.h"
+#include "../validation/include/inputValidation.h"
 
 void welcomeMessage() {
     std::cout << "Welcome to the Contact Management System!\n";
