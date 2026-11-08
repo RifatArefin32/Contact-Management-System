@@ -2,6 +2,7 @@
 #include "../contact/include/contactManager.h"
 #include "../validation/include/inputValidation.h"
 
+
 void addContact() {
     std::cout << "Adding a new contact...\n";
     
@@ -17,7 +18,8 @@ void addContact() {
     std::getline(std::cin, address);
 
     if (validateContact(name, phone, email, address)) {
-        // Add contact to the database
+        Contact newContact(name, phone, email, address);
+        contacts.push_back(newContact);
         std::cout << "Contact added successfully!\n";
     }
     else {
@@ -27,7 +29,22 @@ void addContact() {
 
 void viewContacts() {
     std::cout << "Viewing all contacts...\n";
-    // Implementation for viewing contacts
+    if (contacts.empty()) {
+        std::cout << "No contacts available.\n";
+        return;
+    }
+    else {
+        int count = 1;
+        for (const auto& contact : contacts) {
+            std::cout << "-------------------------\n";
+            std::cout << "No.: " << count++ << "\n";
+            std::cout << "Name: " << contact.getName() << "\n";
+            std::cout << "Phone: " << contact.getPhone() << "\n";
+            std::cout << "Email: " << contact.getEmail() << "\n";
+            std::cout << "Address: " << contact.getAddress() << "\n";
+            std::cout << "-------------------------\n";
+        }
+    }
 }
 
 void searchContact() {
@@ -46,6 +63,6 @@ void deleteContact() {
 }
 
 void exitProgram() {
-    std::cout << "Exiting the program. Goodbye!\n";
+    std::cout << "Exiting... Goodbye!\n";
     exit(0);
 }

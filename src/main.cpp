@@ -1,4 +1,5 @@
 #include <iostream>
+#include <unistd.h>
 #include "inputHandler.h"
 
 #if 0
@@ -19,8 +20,11 @@ src/main.cpp \
 
 int main() {
     welcomeMessage();
-    showMenu();
-    selectOption();
-
+    while(true) {
+        showMenu();
+        selectOption();
+        sleep(1);
+    }
+    
     return 0;
 }

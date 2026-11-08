@@ -4,8 +4,7 @@
 
 
 bool validateOption(int option) {
-    if (option < 1 || option > 6) {
-        std::cout << "Invalid option. Please try again.\n";
+    if (option < 0 || option > 5) {
         return false;
     }
     return true;
