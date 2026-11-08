@@ -1,6 +1,6 @@
 #include <iostream>
 #include "operationHandler.h"
-#include "inputValidation.h"
+#include "../validation/include/inputValidation.h"
 
 void addContact() {
     std::cout << "Adding a new contact...\n";
