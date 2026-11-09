@@ -12,7 +12,7 @@ bool validateOption(int option) {
 
 bool validateContact(const std::string& name, const std::string& phone, const std::string& email, const std::string& address) {
     if (name.empty() || phone.empty()) {
-        std::cout << "**Name and phone are required.**\n";
+        std::cerr << "**Name and phone are required.**\n";
         return false;
     }
     else if (!validateContactName(name)) {

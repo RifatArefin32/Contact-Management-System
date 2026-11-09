@@ -23,7 +23,7 @@ void addContact() {
         std::cout << "Contact added successfully!\n";
     }
     else {
-        std::cout << "Failed to add contact due to validation errors.\n";
+        std::cerr << "Failed to add contact; validation errors.\n";
     }
 }
 
