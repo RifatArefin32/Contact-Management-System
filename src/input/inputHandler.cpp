@@ -27,7 +27,7 @@ void selectOption() {
     std::cout << "Select Option: ";
     std::cin >> option;
     if (!validateOption(option)) {
-        std::cout << "Invalid option. Please try again.\n";
+        std::cerr << "Invalid option. Please try again.\n";
     } else {
         switch (option) {
             case ADD_CONTACT:
